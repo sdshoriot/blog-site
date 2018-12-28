@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="img/png" href="/static/img/favicon.png"/>
+    <title>{{ chapter.chapter_name }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Nunito+Sans|Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/static/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+  
+<!--===================Start header_section================-->
+    <section class="post-nav">
+      <header>
+        <nav>
+          <div class="nav-links">
+            <div class="fixed-sidebar">
+              <a href="/">Home</a>
+              <a href="{% url 'total_author' %}">Authors</a>
+            </div>
+          </div>
+          <div class="connect">
+            <p>Connect on</p>
+            <a href="https://www.facebook.com/groups/banglaidjango/"><img src="/static/img/facebook.png" alt=""></a>
+            <a href="twitter.com"><img src="/static/img/twitter.png" alt=""></a>
+            <a href="google.com"><img src="/static/img/google-plus.png" alt=""></a>  
+          </div>
+        </nav>    
+      </header>
+    </section>   
+<!--===================End header_section==================-->
+
+<!--===================Start posts_of_chapter_section======-->  
+    <section class="series-info">
+      <div class="container">
+        <h4>Tutorial series</h4>
+        <h1>{{ chapter.chapter_name }} - চেপটারের সকল পোস্ট সমূহ</h1>
+        <div class="counts">
+          <span>{{ post.count }} Posts</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="series-section">
+      <div class="container">
+        <div class="series-example">
+          <div class="posts">
+            {% for post in post %}
+            <div class="post">
+              <div class="post-box">
+                <h4 class="category"></h4>
+                <h1><a href="{% url 'post_detail' post.pk %}">{{ post.post_serial_no }}. {{ post.post_title }}</a></h1>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div> 
+      </div>
+    </section>
+<!--===================End posts_of_chapter_section=======-->
+
+<!--==================Start footer_section================-->
+    <footer>
+      <div class="container">
+        <img src="/static/img/logo.png" alt="">
+        <p class="copyright">Copyright © 2018 Banglai-Django</p>
+        <div class="nav-links footer-links">
+          <a href="/">Home</a>
+          <a href="{% url 'total_author' %}">Authors</a>
+        </div>
+      </div>
+    </footer>
+    
+    <section class="credit">
+      <div class="connect">
+        <p>Connect on</p>
+        <a href="https://www.facebook.com/groups/banglaidjango/"><img src="/static/img/facebook.png" alt=""></a>
+        <a href="twitter.com"><img src="/static/img/twitter.png" alt=""></a>
+        <a href="google.com"><img src="/static/img/google-plus.png" alt=""></a>
+      </div>
+      
+      <div class="made-by">
+        <span>Design & Front-End by <a href="https://www.facebook.com/mushfequrr1">Moshfequr Rahman</a></span>
+        <span>Back-End Developed by <a href="https://www.facebook.com/shoriot">SD Shoriot</a></span>
+      </div>
+    </section>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/static/js/function.js"></script>
+  </body>
+</html>
+<!--==================End footer_section==================-->  
