@@ -2,6 +2,7 @@
 
 Banglai-django blog site using Django.
 
+# Homepage:
 ![screenshot](images/1.png)
 ![screenshot](images/3.png)
 ![screenshot](images/5.png)
