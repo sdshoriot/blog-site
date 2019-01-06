@@ -69,7 +69,7 @@
         {% for chapter in chapters %}
         <div class="series-example">
           <div class="post-header">
-            <h4>Chapter {{ chapter.chapter_name }}</h4>
+            <h4>Chapter: {{ chapter.chapter_name }}</h4>
           </div>
           <div class="posts">
             {% for post in chapter.post.all|slice:":4" %}
