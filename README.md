@@ -1,7 +1,3 @@
-# Banglai-Django
-
-Banglai-django blog site using Django.
-
 # Homepage:
 ![screenshot](images/1.png)
 ![screenshot](images/2.png)
